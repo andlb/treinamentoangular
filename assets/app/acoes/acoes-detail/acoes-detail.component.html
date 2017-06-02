@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="acao.logoempresa" class="img-responsive" alt="{{acao.nome}}"
+    style="max-height:300px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{acao.acao}}</h1>
+  </div>
+ </div>
+ <div class="row"> 
+   <div class="col-xs-12">{{acao.nome}}</div>
+ </div>
+<div class="row">
+  <div class="col-xs-12">
+      <div class="btn-group" invDropdown >
+        <button type="button" class="btn btn-primary dropdown-toogle">Gerenciar ações
+          <span class="caret"></span>
+        </button>
+         <ul class="dropdown-menu">
+           <li> <a (click)="onAddToTransacaoList()" style="cursor: pointer;">Transaçoes</a></li>
+           <li> <a (click)="onEditAcao()"  style="cursor: pointer;">>Edita ações</a></li>
+           <li> <a (click)="onDeleteAcao()"  style="cursor: pointer;">>Deleta ações</a></li>
+         </ul>
+      </div>
+  </div>
+ </div>
+ <div class="row">
+   <div class="col-xs-12">
+     <ul class="list-group">
+        <li class="list-group-item" *ngFor="let transacao of acao.transacoes">
+          {{transacao.acao}} {{transacao.quantidade}} {{transacao.data}} {{transacao.valor}} {{transacao.despesa}}
+        </li>
+     </ul>
+   </div>
+ </div>

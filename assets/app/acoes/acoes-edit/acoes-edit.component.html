@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]='acaoForm' (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-sucess" [disabled]='!acaoForm.valid'>Save</button>
+          <button type="button" class="btn btn-danger" (click)='onCancel()'>Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="form-group">
+            <label for="acao"> Acao</label>
+            <input type="text" name="acao" 
+            formControlName="acao" id="acao" class="form-control" />
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="form-group">
+            <label for="nome"> Nome</label>
+            <input type="text" id="nome" formControlName="nome" name="nome" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath"> Imagem</label>
+            <input type="text" id="imagePath" formControlName="imagePath" name="imagePath" class="form-control" #imagePath>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imagePath.value" class="img-responive">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" formArrayName="transacoes">
+          <div class="row" 
+          *ngFor="let transacaoControle of getControls(); let i = index" 
+          [formGroupName]="i"
+            style="margin-top:10px">
+            <div class="col-xs-3">
+              <input type="number" formControlName='quantidade' id="quantidade" name="quantidade" class="form-control" pattern="^[1-9]+[0-9]*$"
+              />
+            </div>
+            <div class="col-xs-4">
+              <input type="number" formControlName='valor' name="valor" id="valor" class="form-control"  />
+            </div>
+            <div class="col-xs-3">
+              <input type="number" formControlName='despesa' id="despesa" name="despesa" class="form-control" pattern="^[1-9]+[0-9]*$"
+              />
+            </div>
+            <div class="col-xs-2">
+              <button type="button" class="btn btn-danger"
+              (click)="onDeleteTransacao()">X</button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" class="btn btn-success" (click)='onAddTransacao()'> Adicionar transação </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

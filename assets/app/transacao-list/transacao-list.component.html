@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-10">
+   <inv-transacao-edit ></inv-transacao-edit>
+  <hr>
+  <ul class="list-group">
+    <a class="list-group-item" style="cursor: pointer"
+    *ngFor="let transacao of transacoes; let i = index"
+    (click)='onEditTransacao(i)'>
+    {{transacao.acao}} {{transacao.quantidade}} {{transacao.data}} {{transacao.valor}} {{transacao.despesa}}
+    </a>
+  </ul>
+  </div>
+</div>
