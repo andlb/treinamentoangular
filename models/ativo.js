@@ -7,8 +7,7 @@ var schema = new Schema({
  empresa:{type: String, required: true},
  logoEmpresa:{type: String},
  ultimoPreco:{type: Number},
- updated: { type: Date, default: Date.now },
- transacao: {type: Schema.Types.ObjectId, ref: 'Transacao'}
+ updated: { type: Date, default: Date.now }
 });
 
 schema.plugin(mongooseUniqueValidator);
