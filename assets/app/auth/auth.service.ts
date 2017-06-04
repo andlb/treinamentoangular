@@ -8,14 +8,20 @@ export class AuthService {
     constructor(private router:Router){
 
     }
-    signupUser(email: string, password: string) {
+    signupUser(email: string, password: string) {        
+        /*
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .catch(
             erro => console.log(erro)
             );
+            */
     }
 
     signinUser(email: string, password: string) {
+
+
+
+        /*
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(
             response => {
@@ -29,6 +35,7 @@ export class AuthService {
             .catch(
             erro => console.log(erro)
             );
+            */
     }
     logout(){
         firebase.auth().signOut();
