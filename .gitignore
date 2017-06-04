@@ -2,5 +2,5 @@
 /.idea
 /typings
 /public/js/
-/config/
+/config/config.js
 npm-debug.log

@@ -10,6 +10,4 @@ var schema = new Schema({
  updated: { type: Date, default: Date.now }
 });
 
-schema.plugin(mongooseUniqueValidator);
-
 module.exports = mongoose.model('Ativo', schema);
