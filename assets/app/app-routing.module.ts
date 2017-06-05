@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-
 import { AuthGuard } from './auth/auth-guard.service';
-
 import { TransacaoListComponent } from './transacao-list/transacao-list.component';
 import { HomeComponent } from './core/home/home.component';
 

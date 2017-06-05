@@ -1,11 +1,12 @@
+'use strict'
+
 var express = require('express');
 var bcrypt = require('bcryptjs')
 var User = require('../models/user');
 var router = express.Router();
 
-
-
-router.post('/', function (req, res, next) {
+router.post('/', function (req, res, next) {    
+    
     var user = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -24,5 +25,6 @@ router.post('/', function (req, res, next) {
             obj: result
         });
     });
-
 });
+
+module.exports = router;
