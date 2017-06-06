@@ -1,1 +1,3 @@
-export const myUrlConst = { url: 'http://localhost:3000'} ;
+export const myConst = { 
+    url: 'http://localhost:3000'
+} ;
